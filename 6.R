@@ -1,0 +1,49 @@
+
+#---- Exemplo: boxplot ----#
+
+dados = c(2 ,2 ,3 ,10 ,13 ,14 ,15 ,15 ,16 ,16,
+		18 ,18 ,20 ,21 ,22 ,22 ,23 ,24 ,25 ,25,
+		26 ,27 ,29 ,29 ,30 ,32 ,36 ,42 ,44 ,45,
+		45 ,46 ,48 ,52 ,58 ,59 ,61 ,61 ,61 ,65,
+		66 ,66 ,68 ,75 ,78 ,80 ,89 ,90 ,92 ,97)
+
+mean(dados); sd(dados);
+
+# primeiro decil
+quantile(dados,prob=0.10,type=2);
+# primeiro quartil
+quantile(dados,prob=0.25,type=2);
+# segundo quartil
+quantile(dados,prob=0.50,type=2);
+# terceiro quartil
+quantile(dados,prob=0.75,type=2);
+# nono decil
+quantile(dados,prob=0.90,type=2);
+
+
+boxplot(dados,ylab='N?mero de casas')
+
+dados = c(dados, 150,170)
+mean(dados); sd(dados);
+
+boxplot(dados,ylab='N?mero de casas')
+
+#---- Exemplo: boxplot com dataset ----#
+	
+data("PlantGrowth")
+  
+head(PlantGrowth)
+
+boxplot(weight~group,data=PlantGrowth, 
+	main = 'Crescimento de Plantas',
+	xlab='',ylab='Peso',names = c('Controle','Trat 1','Trat 2'))
+
+
+#----- Exemplo: aula 02 peso de alunos ---------#
+peso_h <- c(72.8, 80.9, 60.0, 68.5, 85.2, 73.0, 87.0, 95.0, 84.0, 73.0, 75.0, 71.0, 86.0)
+
+peso_m <- c(60.5, 55.0, 55.0, 58.0, 47.0, 57.8, 58.0, 70.0, 54.0, 58.0, 63.5, 47.4, 66.0, 54.5, 52.5, 60.0, 58.5, 49.2, 48.0, 51.6, 57.0, 63.0, 52.0, 49.0, 59.0, 52.0, 56.0, 58.0, 47.0, 60.0, 55.0, 44.0, 55.0, 49.0, 50.0, 54.5, 50.0)
+
+boxplot(peso_h,peso_m, main = 'Peso de alunos',
+	xlab='',ylab='Peso',names = c('Homens','Mulheres'))
+
